@@ -17,5 +17,5 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
-        docker build . -t akscicdctr.azurecr.io/aks:${{ github.sha }}
+        docker build . -t akscicdctr.azurecr.io/aks:${{ github.sha }} -f docker-compose.ci.build.yml
         docker push akscicdctr.azurecr.io/aks:${{ github.sha }}
